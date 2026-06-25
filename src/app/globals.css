@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* arena palette: cold ice + scoring heat */
+  --ice-0: #090d15;
+  --ice-1: #0d121d;
+  --ice-2: #131a28;
+  --ice-3: #1a2334;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.14);
+  --text: #e9eef7;
+  --muted: #889ab4;
+  --blue: #5bc8ff;
+  --blue-deep: #2b6cff;
+  --hot: #ff4d5e;
+  --good: #4ade80;
+
+  /* AirPLAi brand — pink → purple → blue → teal (from the logo) */
+  --brand-pink: #ff2e97;
+  --brand-purple: #b24bff;
+  --brand-blue: #3d7bff;
+  --brand-teal: #25e0c8;
+  --brand-grad: linear-gradient(95deg, var(--brand-pink) 0%, var(--brand-purple) 34%, var(--brand-blue) 66%, var(--brand-teal) 100%);
+
+  --display: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --radius: 14px;
+  --maxw: 1560px;
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; }
+
+/* ---- subtle scrollbars (replace the default white bars with a thin pill) ---- */
+* { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--line-2);
+  border-radius: 999px;
+  border: 2px solid transparent;   /* inset so it reads as a slim pill */
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--muted); background-clip: padding-box; }
+::-webkit-scrollbar-corner { background: transparent; }
+
+body {
+  background:
+    radial-gradient(900px 500px at 78% -8%, rgba(43, 108, 255, 0.16), transparent 60%),
+    radial-gradient(700px 420px at 8% 6%, rgba(91, 200, 255, 0.08), transparent 55%),
+    var(--ice-0);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+/* ---- type ---- */
+.kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.display {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.02;
+}
+.num {
+  font-family: var(--display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.mono { font-family: var(--mono); }
+
+/* ---- AirPLAi brand accents ---- */
+.brand-text {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* the "AirPLAi sees this" marker — used on every CV-only surface */
+.cv-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--mono); font-size: 9px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  color: #0a0e16; background: var(--brand-grad);
+  border-radius: 999px; padding: 2.5px 8px;
+}
+.cv-badge .pulse { width: 5px; height: 5px; border-radius: 50%; background: #0a0e16; opacity: 0.85; }
+.cv-outline {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--ice-1), var(--ice-1)) padding-box,
+    var(--brand-grad) border-box;
+}
+
+/* ---- panels ---- */
+.panel {
+  background: linear-gradient(180deg, var(--ice-1), var(--ice-1)) padding-box;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px 0;
+}
+.panel-title { font-family: var(--display); font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* ---- header ---- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(10px);
+  background: rgba(9, 13, 21, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 10px 14px; min-height: 56px; flex-wrap: wrap; padding-top: 7px; padding-bottom: 7px; }
+.topnav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 19px; letter-spacing: 0.02em; }
+@media (max-width: 560px) {
+  .topnav { gap: 7px; }
+  .topnav .chip { padding: 3px 8px; font-size: 10.5px; }
+  .chip-ext { display: none; } /* drop the external link on phones to keep the nav tidy */
+  .brand { font-size: 17px; }
+}
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--brand-grad); box-shadow: 0 0 14px rgba(178, 75, 255, 0.7); }
+.chip {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px;
+}
+
+/* ---- controls ---- */
+select, input, button { font-family: var(--body); color: var(--text); }
+.select {
+  background: var(--ice-2); border: 1px solid var(--line-2); color: var(--text);
+  border-radius: 10px; padding: 8px 12px; font-size: 14px; cursor: pointer;
+}
+.select:focus-visible, .ask:focus-visible, .pill:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* ---- kpis ---- */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.kpi { padding: 14px 16px; }
+.kpi .label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.kpi .value { font-family: var(--display); font-size: 30px; margin-top: 4px; }
+.kpi .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.value.pos { color: var(--good); }
+.value.neg { color: var(--hot); }
+
+/* ---- layout grid ---- */
+.grid-main { display: grid; grid-template-columns: 1.15fr 1fr; gap: 16px; align-items: start; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+
+/* the live game two-pane: both panes share a tall, screen-filling height so the
+   tape (left) and the intelligence panel (right) line up bottom-to-bottom. */
+.grid-game {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  height: calc(100vh - 176px);
+  min-height: 660px;
+}
+@media (max-width: 980px) {
+  .grid-game { grid-template-columns: 1fr; height: auto; min-height: 0; }
+}
+
+/* ---- tables ---- */
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th { text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 9px 12px; border-bottom: 1px solid var(--line); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(255,255,255,0.02); }
+.tdnum { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; }
+
+/* ---- PLAiChat ---- */
+.ask-row { display: flex; gap: 8px; padding: 0 16px 14px; }
+.ask {
+  flex: 1; background: var(--ice-2); border: 1px solid var(--line-2);
+  border-radius: 10px; padding: 10px 13px; font-size: 14px;
+}
+.ask::placeholder { color: var(--muted); }
+.send {
+  background: var(--blue-deep); border: none; color: white; font-weight: 600;
+  border-radius: 10px; padding: 0 16px; cursor: pointer; font-size: 14px;
+}
+.send:disabled { opacity: 0.5; cursor: default; }
+.pills { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 16px 14px; }
+.pill {
+  background: transparent; border: 1px solid var(--line-2); color: var(--muted);
+  border-radius: 999px; padding: 5px 11px; font-size: 12px; cursor: pointer;
+}
+.pill:hover { color: var(--text); border-color: var(--blue); }
+.answer { padding: 0 16px 16px; }
+.answer .text { background: var(--ice-2); border: 1px solid var(--line); border-left: 3px solid var(--blue); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+.src { font-family: var(--mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px; }
+.clips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 12px; }
+.clip { background: var(--ice-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px; display: flex; gap: 10px; align-items: center; }
+.clip .play { width: 30px; height: 30px; flex: none; border-radius: 8px; background: rgba(91,200,255,0.12); border: 1px solid var(--line-2); display: grid; place-items: center; color: var(--blue); }
+.clip .meta .l { font-size: 12.5px; }
+.clip .meta .t { font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+
+/* ---- shot map ---- */
+.rink-legend { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); padding: 0 16px 14px; }
+.legend-bar { height: 8px; width: 130px; border-radius: 6px; background: linear-gradient(90deg, rgb(59,130,246), rgb(56,189,248), rgb(250,204,21), rgb(249,115,22), rgb(255,77,94)); }
+.toggle-row { display: flex; gap: 7px; padding: 0 16px 12px; flex-wrap: wrap; }
+
+/* ---- bars ---- */
+.bar-row { display: grid; grid-template-columns: 78px 1fr auto; gap: 10px; align-items: center; padding: 7px 16px; }
+.bar-track { height: 9px; background: var(--ice-3); border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; }
+.bar-label { font-size: 12.5px; color: var(--muted); }
+.bar-val { font-family: var(--mono); font-size: 12px; color: var(--text); }
+
+.foot { color: var(--muted); font-size: 12px; padding: 26px 0 40px; border-top: 1px solid var(--line); margin-top: 26px; line-height: 1.6; }
+
+@media (max-width: 880px) {
+  .grid-main { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .clips { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in { animation: fade 0.4s ease both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}

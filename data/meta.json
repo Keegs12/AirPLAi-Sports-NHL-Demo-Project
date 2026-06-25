@@ -1,0 +1,10 @@
+{
+  "season": "2023-2024",
+  "generatedAt": "2026-06-25T01:33:06.378Z",
+  "source": "Seed snapshot. Aggregates: realistic 2023-24 MoneyPuck figures. Per-shot coordinates: synthesized from a hockey-accurate spatial model. Run scripts/ingest.mjs to replace with live MoneyPuck data.",
+  "counts": {
+    "teams": 16,
+    "skaters": 20,
+    "shots": 3520
+  }
+}

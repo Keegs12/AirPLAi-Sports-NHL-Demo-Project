@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+.DS_Store
+.playwright-mcp/
+# NOTE: data/ is intentionally committed (deterministic seed + enriched game) so the
+# demo is reproducible offline — do not ignore it.

@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "game": "2026 Stanley Cup Final — Game 3",
+    "date": "2026-06-06",
+    "venue": "T-Mobile Arena, Las Vegas",
+    "home": "VGK",
+    "away": "CAR",
+    "final": { "VGK": 5, "CAR": 4 },
+    "decision": "2OT",
+    "seriesAfter": "VGK leads 2-1",
+    "seriesResult": "CAR won series 4-2 (Stanley Cup champions)",
+    "p1Shots": { "CAR": 7, "VGK": 2 },
+    "source": "Real events from public NHL.com / Wikipedia / CBS / CBC recaps. Per-shot coords (x,y in rink feet, net at x=89) and clock seconds are REPRESENTATIVE; replace with NHL API play-by-play (gamecenter/{gameId}/play-by-play) for exact values.",
+    "note": "This file is the real-event backbone only. Non-scoring shot attempts that populate the live shot map should be added from the NHL API pull or synthesized with the existing xG/spatial model (see scripts/generate-seed.mjs)."
+  },
+  "rosters": {
+    "CAR": {
+      "F": ["Sebastian Aho", "Andrei Svechnikov", "Seth Jarvis", "Jordan Staal (C)", "Nikolaj Ehlers", "Logan Stankoven", "Taylor Hall", "Jackson Blake", "Jordan Martinook", "Mark Jankowski", "William Carrier", "Eric Robinson"],
+      "D": ["Jaccob Slavin", "Shayne Gostisbehere", "Sean Walker", "Jalen Chatfield"],
+      "G": ["Frederik Andersen", "Brandon Bussi"],
+      "partial": true
+    },
+    "VGK": {
+      "F": ["Jack Eichel (C)", "Mitch Marner", "Tomas Hertl", "William Karlsson", "Ivan Barbashev", "Brett Howden", "Pavel Dorofeyev", "Colton Sissons", "Cole Smith", "Mark Stone"],
+      "D": ["Shea Theodore", "Brayden McNabb", "Noah Hanifin", "Alex Pietrangelo"],
+      "G": ["Carter Hart"],
+      "partial": true
+    }
+  },
+  "events": [
+    { "id": "g3-pen1", "period": 2, "clockElapsed": 360, "team": "CAR", "type": "penalty", "player": "Bench (served by Jordan Martinook)", "infraction": "Too many men on the ice", "pim": 2, "detail": "Bench minor — sets up the Vegas power play" },
+    { "id": "g3-01", "period": 2, "clockElapsed": 480, "team": "VGK", "type": "goal", "strength": "PP", "scorer": "Tomas Hertl", "assists": ["Jack Eichel", "Mitch Marner"], "shotType": "WRIST", "x": 80, "y": 4, "xG": 0.18, "highDanger": 1, "scoreAfter": { "VGK": 1, "CAR": 0 }, "detail": "Power play after Carolina too-many-on-the-ice" },
+    { "id": "g3-02", "period": 2, "clockElapsed": 496, "team": "VGK", "type": "goal", "strength": "EV", "scorer": "Mitch Marner", "assists": ["William Karlsson", "Shea Theodore"], "shotType": "TIP", "x": 82, "y": -6, "xG": 0.22, "highDanger": 1, "scoreAfter": { "VGK": 2, "CAR": 0 }, "detail": "Deflected in off a Carolina stick; 16s after Hertl (Vegas record fastest two playoff goals)" },
+    { "id": "g3-03", "period": 2, "clockElapsed": 690, "team": "VGK", "type": "goal", "strength": "EV", "scorer": "Mitch Marner", "assists": ["Brayden McNabb"], "shotType": "BACKHAND", "x": 78, "y": 8, "xG": 0.12, "highDanger": 1, "scoreAfter": { "VGK": 3, "CAR": 0 }, "detail": "Backhand past Andersen" },
+    { "id": "g3-04", "period": 2, "clockElapsed": 866, "team": "VGK", "type": "goal", "strength": "EV", "scorer": "Mitch Marner", "assists": ["Tomas Hertl"], "shotType": "SLAP", "x": 68, "y": -10, "xG": 0.06, "highDanger": 0, "scoreAfter": { "VGK": 4, "CAR": 0 }, "detail": "Slap shot completes natural hat trick in 6:10 — fastest hat trick in Cup Final history" },
+    { "id": "g3-05", "period": 2, "clockElapsed": 1200, "team": "CAR", "type": "goalie_change", "out": "Frederik Andersen", "in": "Brandon Bussi", "detail": "Andersen pulled after 2 periods (4 GA); Bussi starts the 3rd" },
+    { "id": "g3-pen2", "period": 3, "clockElapsed": 150, "team": "VGK", "type": "penalty", "player": "Brayden McNabb", "infraction": "Tripping", "pim": 2, "detail": "Puts Carolina on the power play; Marner draws the short-handed penalty shot while killing it" },
+    { "id": "g3-06", "period": 3, "clockElapsed": 244, "team": "VGK", "type": "penalty_shot", "shooter": "Mitch Marner", "result": "saved", "goalie": "Brandon Bussi", "strength": "SH", "detail": "Short-handed penalty shot stopped — pivotal miss" },
+    { "id": "g3-07", "period": 3, "clockElapsed": 423, "team": "CAR", "type": "goal", "strength": "EV", "scorer": "Jordan Martinook", "assists": ["Seth Jarvis", "Logan Stankoven"], "shotType": "WRIST", "x": 84, "y": -3, "xG": 0.20, "highDanger": 1, "scoreAfter": { "VGK": 4, "CAR": 1 }, "detail": "Start of the fastest 3 goals in Cup Final history (39s)" },
+    { "id": "g3-08", "period": 3, "clockElapsed": 440, "team": "CAR", "type": "goal", "strength": "EV", "scorer": "Taylor Hall", "assists": ["Sebastian Aho", "Jackson Blake"], "shotType": "SNAP", "x": 82, "y": 6, "xG": 0.16, "highDanger": 1, "scoreAfter": { "VGK": 4, "CAR": 2 }, "detail": "" },
+    { "id": "g3-09", "period": 3, "clockElapsed": 462, "team": "CAR", "type": "goal", "strength": "EV", "scorer": "Jordan Staal", "assists": ["Jaccob Slavin", "Eric Robinson"], "shotType": "WRIST", "x": 85, "y": 2, "xG": 0.24, "highDanger": 1, "scoreAfter": { "VGK": 4, "CAR": 3 }, "detail": "Makes it 4-3 at 12:18 remaining — completes the 39s burst" },
+    { "id": "g3-pen3", "period": 3, "clockElapsed": 1010, "team": "VGK", "type": "penalty", "player": "Alex Pietrangelo", "infraction": "Holding", "pim": 2, "detail": "Late-period penalty Carolina turns into the 6-on-4 tying goal" },
+    { "id": "g3-10", "period": 3, "clockElapsed": 1098, "team": "CAR", "type": "goal", "strength": "PP", "scorer": "Andrei Svechnikov", "assists": ["Jordan Staal", "Sebastian Aho"], "shotType": "TIP", "x": 87, "y": -1, "xG": 0.35, "highDanger": 1, "scoreAfter": { "VGK": 4, "CAR": 4 }, "detail": "6-on-4 (power play + pulled goalie); jammed rebound home with 1:42 left" },
+    { "id": "g3-11", "period": 5, "clockElapsed": 338, "team": "VGK", "type": "goal", "strength": "EV", "scorer": "Shea Theodore", "assists": ["Brayden McNabb"], "shotType": "SLAP", "x": 66, "y": 18, "xG": 0.04, "highDanger": 0, "gameWinner": true, "scoreAfter": { "VGK": 5, "CAR": 4 }, "detail": "2OT winner — low slap banked off end boards, in off Bussi's skate. Lowest-xG goal of the game." }
+  ]
+}

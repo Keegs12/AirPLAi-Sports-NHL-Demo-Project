@@ -1,0 +1,32 @@
+{
+  "name": "airplai-hockey",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AirPLAi domain-expansion demo — AI hockey video intelligence (scaffold)",
+  "scripts": {
+    "predev": "node scripts/ensure-seed.mjs",
+    "prebuild": "node scripts/ensure-seed.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node scripts/generate-seed.mjs",
+    "build:game": "node scripts/build-game.mjs",
+    "ingest": "node scripts/ingest.mjs",
+    "ingest:game": "node scripts/ingest-game.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.5.3",
+    "vitest": "2.0.5"
+  }
+}
