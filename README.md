@@ -2,7 +2,7 @@
 
 A domain-expansion demo: AirPLAi's AI sports-video intelligence, applied to **hockey**.
 
-**Live demo:** _Vercel URL (TBD)_ · **Repo:** `github.com/Keegs12/AirPLAi-Sports-NHL-Demo-Project`
+**Live demo:** https://air-pl-ai-sports-nhl-demo-project.vercel.app/ · **Repo:** `github.com/Keegs12/AirPLAi-Sports-NHL-Demo-Project`
 · **Part 1 (Domain & Design):** [`docs/DOMAIN_DESIGN.md`](docs/DOMAIN_DESIGN.md)
 · **Part 3 (Technical Writeup):** [`docs/TECHNICAL_WRITEUP.md`](docs/TECHNICAL_WRITEUP.md)
 
